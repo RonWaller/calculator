@@ -1,0 +1,2 @@
+# calculator
+Create JavaScript calculator 
