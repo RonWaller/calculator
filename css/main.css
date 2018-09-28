@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.showcase {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+}
+
+.calculator {
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-areas: 'display display display display'
+        'percent pi backspace divide'
+        'seven eight nine multiply'
+        'four five six subtract'
+        'one two three plus'
+        'clear zero period equal';
+    grid-gap: 3px;
+}
+
+.display {
+    border-bottom: 1px solid black;
+    height: 60px;
+    grid-area: display;
+    /* margin-bottom: 20px; */
+}
+
+.btn {
+    padding: 15px 32px;
+    margin: 2px;
+}
+
+#percent {
+    grid-area: percent;
+}
+
+#pi {
+    grid-area: pi;
+}
+
+#backspace {
+    grid-area: backspace;
+}
+
+#divide {
+    grid-area: divide;
+}
+
+#nine {
+    grid-area: nine;
+}
+
+#eight {
+    grid-area: eight;
+}
+
+#seven {
+    grid-area: seven;
+}
+
+#six {
+    grid-area: six;
+}
+
+#five {
+    grid-area: five;
+}
+
+#four {
+    grid-area: four;
+}
+
+#three {
+    grid-area: three;
+}
+
+#two {
+    grid-area: two;
+}
+
+#one {
+    grid-area: one;
+}
+
+#plus {
+    grid-area: plus;
+}
+
+#subtract {
+    grid-area: subtract;
+}
+
+#divide {
+    grid-area: divide;
+}
+
+#equal {
+    grid-area: equal;
+}
+
+#period {
+    grid-area: period;
+}
