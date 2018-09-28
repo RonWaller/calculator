@@ -31,6 +31,7 @@ body {
     border-bottom: 1px solid black;
     height: 60px;
     grid-area: display;
+    text-align: right;
     /* margin-bottom: 20px; */
 }
 

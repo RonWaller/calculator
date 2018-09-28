@@ -1,6 +1,16 @@
-let button = document.querySelectorAll('button');
-console.log(button);
+let calcButton = document.querySelectorAll(".btn");
+console.log(calcButton);
 
-// .addEventListener('click', function() {
-//     console.log(this);
-// }, false);
+for (let i = 0; i < calcButton.length; i++) {
+    calcButton[i].addEventListener("click", function() {
+        value = this.value;
+        console.log(value);
+        console.log(typeof value);
+        displayValue(value);
+    });
+}
+
+function displayValue(value) {
+    let display = document.querySelector('.display');
+    display.innerHTML += `${value}`;
+}
