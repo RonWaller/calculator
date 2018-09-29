@@ -14,7 +14,7 @@ body {
     position: absolute;
     top: 20%;
     left: 40%;
-    border: 1px solid black;
+    border: 3px solid black;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
@@ -28,16 +28,21 @@ body {
 }
 
 .display {
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid black;
     height: 60px;
     grid-area: display;
     text-align: right;
+    padding-top: 15px;
+    padding-right: 7px;
+    font-size: 2rem;
     /* margin-bottom: 20px; */
 }
 
 .btn {
     padding: 15px 32px;
     margin: 2px;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 #percent {
