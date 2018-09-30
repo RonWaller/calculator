@@ -19,7 +19,7 @@ body {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
     grid-template-areas: 'display display display display'
-        'percent pi backspace divide'
+        'percent root backspace divide'
         'seven eight nine multiply'
         'four five six subtract'
         'one two three plus'
@@ -49,8 +49,8 @@ body {
     grid-area: percent;
 }
 
-#pi {
-    grid-area: pi;
+#sqroot {
+    grid-area: root;
 }
 
 #backspace {
