@@ -18,14 +18,19 @@ function displayValue(value) {
         clear(display);
     } else if (value == 'back' && display.innerHTML.length > 0) {
         backspace(display);
+    } else if (value == '%') {
+        percent(display);
     } else {
         display.innerHTML += `${value}`;
     }
 }
 
 function evaluate(display) {
+    console.log(display.innerHTML);
+    console.log(display.innerHTML.length);
     let answer = eval(display.innerHTML);
     console.log(answer);
+    console.log(typeof answer);
     display.innerHTML = answer;
 }
 
@@ -37,4 +42,20 @@ function backspace(display) {
     let string = display.innerHTML;
     let newString = string.slice(0, -1);
     display.innerHTML = newString;
+}
+
+function percent(display) {
+    let string = display.innerHTML;
+    if (string.includes(' * ')) {
+        let answer = (eval(string) / 100);
+        display.innerHTML = answer;
+    } else if (string.includes(' + ')) {
+        let splitString = string.split(' ');
+        console.log(splitString);
+        if
+        let newString = `(splitString[0] * splitString[2]) / 100`
+        console.log(newString);
+        let answer = eval(newString) + parseInt(splitString[0]);
+        display.innerHTML = answer;
+    }
 }
