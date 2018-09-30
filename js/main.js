@@ -12,11 +12,13 @@ for (let i = 0; i < calcButton.length; i++) {
 
 function displayValue(value) {
     let display = document.querySelector('.display');
+    console.log(value);
     if (value == '=') {
         evaluate(display);
     } else if (value == 'C') {
         clear(display);
-    } else if (value == 'back' && display.innerHTML.length > 0) {
+    } else if (value == 'back' && display.innerHTML.length >= 0) {
+        value = '';
         backspace(display);
     } else if (value == '%') {
         percent(display);
@@ -35,11 +37,13 @@ function evaluate(display) {
 }
 
 function clear(display) {
-    display.innerHTML = ' ';
+    display.innerHTML = '';
 }
 
 function backspace(display) {
     let string = display.innerHTML;
+    console.log('back function');
+    console.log(string);
     let newString = string.slice(0, -1);
     display.innerHTML = newString;
 }
@@ -49,13 +53,32 @@ function percent(display) {
     if (string.includes(' * ')) {
         let answer = (eval(string) / 100);
         display.innerHTML = answer;
-    } else if (string.includes(' + ')) {
-        let splitString = string.split(' ');
+    } else if (string.includes(' / ')) {
+        let splitString = string.length > 0 ? string.split(' ') : [];
         console.log(splitString);
-        if
-        let newString = `(splitString[0] * splitString[2]) / 100`
+        let newString = `${splitString[0]} / (${splitString[2]} / 100)`;
         console.log(newString);
-        let answer = eval(newString) + parseInt(splitString[0]);
+        let answer = eval(newString);
+        display.innerHTML = answer;
+    } else if (string.includes(' + ')) {
+        let splitString = string.length > 0 ? string.split(' ') : [];
+        console.log(splitString);
+        let newString = `${splitString[0]} + (${splitString[0]} * (${splitString[2]} / 100))`;
+        console.log(newString);
+        let answer = eval(newString);
+        display.innerHTML = answer;
+    } else if (string.includes(' - ')) {
+        let splitString = string.length > 0 ? string.split(' ') : [];
+        console.log(splitString);
+        let newString = `${splitString[0]} - (${splitString[0]} * (${splitString[2]} / 100))`;
+        console.log(newString);
+        let answer = eval(newString);
         display.innerHTML = answer;
     }
 }
+
+//discount or percentage of
+// amount * (percent / 100)
+
+//percent increase
+//amount
